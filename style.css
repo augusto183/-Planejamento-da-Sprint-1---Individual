@@ -1,3 +1,4 @@
+/* Estilo base para todos os tamanhos */
 body {
   font-family: Arial, sans-serif;
   background-color: #f3f3f3;
@@ -7,8 +8,9 @@ body {
 
 .container {
   max-width: 400px;
+  width: 90%;
   background: white;
-  margin: 50px auto;
+  margin: 40px auto;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -17,28 +19,32 @@ body {
 h2 {
   text-align: center;
   color: #333;
+  font-size: 24px;
 }
 
 label {
   display: block;
   margin-top: 15px;
   font-weight: bold;
+  font-size: 14px;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-top: 5px;
   border-radius: 4px;
   border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 button {
   margin-top: 20px;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #0077cc;
   color: white;
   border: none;
@@ -48,15 +54,35 @@ button {
 
 button:hover {
   background-color: #005fa3;
+  cursor: pointer;
 }
 
 .erro {
   color: red;
   text-align: center;
   margin-top: 10px;
+  font-size: 14px;
 }
 
 .link {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* Responsivo para telas menores que 400px */
+@media (max-width: 400px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  input,
+  button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
 }
