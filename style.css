@@ -1,24 +1,34 @@
-/* Estilo base para todos os tamanhos */
 body {
   font-family: Arial, sans-serif;
   background-color: #f3f3f3;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.alto-contraste {
+  background-color: #000;
+  color: #fff;
 }
 
 .container {
   max-width: 400px;
   width: 90%;
   background: white;
-  margin: 40px auto;
+  margin: 50px auto;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+body.alto-contraste .container {
+  background-color: #111;
+  color: #fff;
+  border: 2px solid yellow;
+}
+
 h2 {
   text-align: center;
-  color: #333;
   font-size: 24px;
 }
 
@@ -29,27 +39,24 @@ label {
   font-size: 14px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+input,
+button {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
   border-radius: 4px;
-  border: 1px solid #ccc;
   font-size: 16px;
   box-sizing: border-box;
 }
 
+input {
+  border: 1px solid #ccc;
+}
+
 button {
-  margin-top: 20px;
-  width: 100%;
-  padding: 12px;
   background-color: #0077cc;
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
 }
 
 button:hover {
@@ -57,20 +64,32 @@ button:hover {
   cursor: pointer;
 }
 
-.erro {
-  color: red;
-  text-align: center;
-  margin-top: 10px;
-  font-size: 14px;
-}
-
 .link {
   text-align: center;
   margin-top: 15px;
-  font-size: 14px;
 }
 
-/* Responsivo para telas menores que 400px */
+.erro {
+  color: red;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Acessibilidade */
+.acessibilidade {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.acessibilidade button {
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+/* Responsividade */
 @media (max-width: 400px) {
   h2 {
     font-size: 20px;
@@ -79,10 +98,5 @@ button:hover {
   input,
   button {
     font-size: 15px;
-    padding: 10px;
-  }
-
-  .container {
-    padding: 15px;
   }
 }
